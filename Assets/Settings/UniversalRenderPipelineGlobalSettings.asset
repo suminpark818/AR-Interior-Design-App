@@ -61,8 +61,20 @@ MonoBehaviour:
       - rid: 2580547563165319172
       - rid: 2580547563165319173
       - rid: 2580547563165319174
+      - rid: 2580547714596208640
     m_RuntimeSettings:
-      m_List: []
+      m_List:
+      - rid: 9145189647983312896
+      - rid: 9145189647983312897
+      - rid: 9145189647983312898
+      - rid: 9145189647983312900
+      - rid: 9145189647983312901
+      - rid: 9145189647983312904
+      - rid: 9145189647983312906
+      - rid: 9145189647983312914
+      - rid: 9145189647983312915
+      - rid: 9145189647983312916
+      - rid: 2580547563165319173
   m_AssetVersion: 8
   m_ObsoleteDefaultVolumeProfile: {fileID: 0}
   m_RenderingLayerNames:
@@ -86,6 +98,8 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 2580547563165319168
       type: {class: PostProcessData/ShaderResources, ns: UnityEngine.Rendering.Universal,
         asm: Unity.RenderPipelines.Universal.Runtime}
@@ -230,6 +244,11 @@ MonoBehaviour:
       data:
         m_Version: 1
         m_UseBicubicLightmapSampling: 0
+    - rid: 2580547714596208640
+      type: {class: RenderingDebuggerRuntimeResources, ns: UnityEngine.Rendering,
+        asm: Unity.RenderPipelines.Core.Runtime}
+      data:
+        m_version: 0
     - rid: 9145189647983312896
       type: {class: RenderGraphSettings, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.Runtime}
       data:
