@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arRaycastManager: {fileID: 204252190}
-  anchorManager: {fileID: 0}
+  anchorManager: {fileID: 204252196}
   cubePrefab: {fileID: 3875068806075982230, guid: edf218cc7f7abd944b00b31dc0ca56ca,
     type: 3}
 --- !u!114 &204252196
