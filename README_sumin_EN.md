@@ -38,6 +38,6 @@
 - Outline not showing:
   → Installed and integrated QuickOutline → working correctly.
 
-###Result
+### Result
 - Objects can now be placed, selected, moved, scaled, and rotated intuitively.
 - Verified smooth gesture response and accurate placement on iPhone build.
