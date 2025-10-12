@@ -21,23 +21,23 @@
 ## Week 2 Progress: Object Manipulation (Move, Rotate, Scale)
 
 ### What I Did
-Implemented full object manipulation system:
-Tap on plane → place object
-Tap on object → select with outline
-Drag → move object
-Pinch → scale object
-Two-finger rotation → rotate around Y-axis
-Integrated QuickOutline asset for visual feedback
-Added tag-based selection system ("Furniture") to separate placement vs manipulation modes
+- Implemented full object manipulation system:
+  - Tap on plane → place object
+  - Tap on object → select with outline
+  - Drag → move object
+  - Pinch → scale object
+  - Two-finger rotation → rotate around Y-axis
+- Integrated QuickOutline asset for visual feedback
+  - Added tag-based selection system ("Furniture") to separate placement vs manipulation modes
 
 ### Troubleshooting Summary
-Continuous spawning on drag:
-→ Added isPlacing flag + tag-based selection → fixed.
-Gesture control not applied:
-→ Implemented ARRaycastManager.Raycast() based touch projection.
-Outline not showing:
-→ Installed and integrated QuickOutline → working correctly.
+- Continuous spawning on drag:
+  → Added isPlacing flag + tag-based selection → fixed.
+- Gesture control not applied:
+  → Implemented ARRaycastManager.Raycast() based touch projection.
+- Outline not showing:
+  → Installed and integrated QuickOutline → working correctly.
 
 ###Result
-Objects can now be placed, selected, moved, scaled, and rotated intuitively.
-Verified smooth gesture response and accurate placement on iPhone build.
+- Objects can now be placed, selected, moved, scaled, and rotated intuitively.
+- Verified smooth gesture response and accurate placement on iPhone build.
