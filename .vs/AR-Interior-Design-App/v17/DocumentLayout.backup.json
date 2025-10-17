@@ -23,8 +23,8 @@
       "RelativeMoniker": "D:0:0:{3F5794F3-9546-0387-6D48-3FAF83B962E4}|Assembly-CSharp.csproj|solutionrelative:assets\\lee\\furnitureselectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\dldpq\\unity\\ar-interior-design-app\\assets\\lee\\materialpalettescrollview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\lee\\materialpalettescrollview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Assets\\lee\\MaterialPaletteScrollView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\lee\\MaterialPaletteScrollView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,8 +46,7 @@
               "RelativeToolTip": "Library\\PackageCache\\com.unity.xr.arfoundation@ddd5a77596e0\\Runtime\\ARFoundation\\SubsystemLifecycleManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAD5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T19:43:22.005Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-16T19:43:22.005Z"
             },
             {
               "$type": "Document",
@@ -67,9 +66,9 @@
               "Title": "ColorPaletteManager.cs",
               "DocumentMoniker": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Assets\\lee\\ColorPaletteManager.cs",
               "RelativeDocumentMoniker": "Assets\\lee\\ColorPaletteManager.cs",
-              "ToolTip": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Assets\\lee\\ColorPaletteManager.cs",
-              "RelativeToolTip": "Assets\\lee\\ColorPaletteManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAIAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Assets\\lee\\ColorPaletteManager.cs*",
+              "RelativeToolTip": "Assets\\lee\\ColorPaletteManager.cs*",
+              "ViewState": "AgIAABEAAAAAAAAAAADwvxsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-16T17:21:19.297Z",
               "EditorCaption": ""
@@ -108,8 +107,7 @@
               "RelativeToolTip": "Assets\\lee\\ObjectPlacer.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAUwDAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T14:03:23.693Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-23T14:03:23.693Z"
             }
           ]
         }
