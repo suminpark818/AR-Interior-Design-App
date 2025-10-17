@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F5794F3-9546-0387-6D48-3FAF83B962E4}|Assembly-CSharp.csproj|c:\\users\\dldpq\\unity\\ar-interior-design-app\\assets\\lee\\objectplacer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3F5794F3-9546-0387-6D48-3FAF83B962E4}|Assembly-CSharp.csproj|c:\\users\\dldpq\\unity\\ar-interior-design-app\\assets\\lee\\colorpalettemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F5794F3-9546-0387-6D48-3FAF83B962E4}|Assembly-CSharp.csproj|solutionrelative:assets\\lee\\colorpalettemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Library\\PackageCache\\com.unity.xr.arfoundation@ddd5a77596e0\\Runtime\\ARFoundation\\SubsystemLifecycleManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.xr.arfoundation@ddd5a77596e0\\Runtime\\ARFoundation\\SubsystemLifecycleManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F5794F3-9546-0387-6D48-3FAF83B962E4}|Assembly-CSharp.csproj|C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\assets\\lee\\objectplacer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F5794F3-9546-0387-6D48-3FAF83B962E4}|Assembly-CSharp.csproj|solutionrelative:assets\\lee\\objectplacer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F5794F3-9546-0387-6D48-3FAF83B962E4}|Assembly-CSharp.csproj|C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\assets\\lee\\colorapplicator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F5794F3-9546-0387-6D48-3FAF83B962E4}|Assembly-CSharp.csproj|solutionrelative:assets\\lee\\colorapplicator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F5794F3-9546-0387-6D48-3FAF83B962E4}|Assembly-CSharp.csproj|C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\assets\\lee\\furnitureselectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F5794F3-9546-0387-6D48-3FAF83B962E4}|Assembly-CSharp.csproj|solutionrelative:assets\\lee\\furnitureselectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\dldpq\\unity\\ar-interior-design-app\\assets\\lee\\materialpalettescrollview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\lee\\materialpalettescrollview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,24 +34,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SubsystemLifecycleManager.cs",
+              "DocumentMoniker": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Library\\PackageCache\\com.unity.xr.arfoundation@ddd5a77596e0\\Runtime\\ARFoundation\\SubsystemLifecycleManager.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.xr.arfoundation@ddd5a77596e0\\Runtime\\ARFoundation\\SubsystemLifecycleManager.cs",
+              "ToolTip": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Library\\PackageCache\\com.unity.xr.arfoundation@ddd5a77596e0\\Runtime\\ARFoundation\\SubsystemLifecycleManager.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.xr.arfoundation@ddd5a77596e0\\Runtime\\ARFoundation\\SubsystemLifecycleManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAD5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T19:43:22.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MaterialPaletteScrollView.cs",
+              "DocumentMoniker": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Assets\\lee\\MaterialPaletteScrollView.cs",
+              "RelativeDocumentMoniker": "Assets\\lee\\MaterialPaletteScrollView.cs",
+              "ToolTip": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Assets\\lee\\MaterialPaletteScrollView.cs",
+              "RelativeToolTip": "Assets\\lee\\MaterialPaletteScrollView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T17:58:10.152Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ColorPaletteManager.cs",
+              "DocumentMoniker": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Assets\\lee\\ColorPaletteManager.cs",
+              "RelativeDocumentMoniker": "Assets\\lee\\ColorPaletteManager.cs",
+              "ToolTip": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Assets\\lee\\ColorPaletteManager.cs",
+              "RelativeToolTip": "Assets\\lee\\ColorPaletteManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T17:21:19.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ColorApplicator.cs",
+              "DocumentMoniker": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Assets\\lee\\ColorApplicator.cs",
+              "RelativeDocumentMoniker": "Assets\\lee\\ColorApplicator.cs",
+              "ToolTip": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Assets\\lee\\ColorApplicator.cs",
+              "RelativeToolTip": "Assets\\lee\\ColorApplicator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T17:18:17.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FurnitureSelectionManager.cs",
+              "DocumentMoniker": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Assets\\lee\\FurnitureSelectionManager.cs",
+              "RelativeDocumentMoniker": "Assets\\lee\\FurnitureSelectionManager.cs",
+              "ToolTip": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Assets\\lee\\FurnitureSelectionManager.cs",
+              "RelativeToolTip": "Assets\\lee\\FurnitureSelectionManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T19:39:04.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ObjectPlacer.cs",
               "DocumentMoniker": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Assets\\lee\\ObjectPlacer.cs",
               "RelativeDocumentMoniker": "Assets\\lee\\ObjectPlacer.cs",
               "ToolTip": "C:\\Users\\dldpq\\unity\\AR-Interior-Design-App\\Assets\\lee\\ObjectPlacer.cs",
               "RelativeToolTip": "Assets\\lee\\ObjectPlacer.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBcAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAUwDAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-23T14:03:23.693Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
