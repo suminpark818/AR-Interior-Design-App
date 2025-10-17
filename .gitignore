@@ -58,3 +58,9 @@ sysinfo.txt
 # --- Optional: Package Manager local cache ---
 /Packages/com.unity.analytics/
 UserSettings/
+*.sln
+*.csproj
+*.user
+*.userprefs
+*.pidb
+*.booproj
