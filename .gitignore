@@ -1,26 +1,60 @@
-# Unity generated
+# =====================================================
+# UNITY STANDARD IGNORE TEMPLATE (Optimized for Team Use)
+# =====================================================
+
+# --- Unity generated folders ---
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
-[Bb]uild*/
+[Bb]uild/
+[Bb]uilds/
 [Ll]ogs/
-[Mm]emoryCaptures/
+MemoryCaptures/
+UserSettings/     # ⚠️ 개인 환경 설정 - 팀 공유 금지
 
-# Visual Studio / Rider
-*.csproj
-*.unityproj
-*.sln
-*.suo
-*.tmp
-*.user
-*.userprefs
-*.pidb
-*.booproj
-*.svd
-*.pdb
-*.mdb
+# --- IDE specific ---
+.vs/
+.vscode/
+.idea/
 
-# OS-specific
+# --- Crash Reports ---
+sysinfo.txt
+
+# --- OS generated files ---
 .DS_Store
 Thumbs.db
 
+# --- Unity Cache ---
+[Ll]ightmapSnapshot/
+*.bak
+*.tmp
+*.pidb
+*.booproj
+*.svd
+*.userprefs
+*.blend1
+*.blend2
+
+# --- Auto-generated meta for local tools ---
+Assets/StreamingAssets/aa.meta
+Assets/AddressableAssetsData.meta
+
+# --- AR/VR specific ---
+Assets/ARCoreExtensions/*
+Assets/ARKitFaceTracking/*
+Assets/XRPlugins/*
+*.xcworkspace/
+*.xcuserstate
+DerivedData/
+
+# --- Unity Cloud Build ---
+/[Cc]ache/
+sysinfo.txt
+
+# --- Optional: Log & crash dumps ---
+*.log
+*.stacktrace
+
+# --- Optional: Package Manager local cache ---
+/Packages/com.unity.analytics/
+UserSettings/
