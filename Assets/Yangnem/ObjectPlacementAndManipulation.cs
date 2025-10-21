@@ -6,85 +6,88 @@ using System.Collections.Generic;
 [RequireComponent(typeof(ARRaycastManager))]
 public class ObjectPlacementAndManipulation : MonoBehaviour
 {
-    [Header("Prefabs")]
-    [SerializeField] private GameObject defaultPrefab;
-
-    [Header("AR Components")]
-    [SerializeField] private Camera arCamera; // ✅ Inspector에 AR Camera 넣기
+    [Header("References")]
+    [SerializeField] private Camera arCamera;
+    [SerializeField] private ColorApplicator colorApplicator;
 
     private ARRaycastManager raycastManager;
-    private List<ARRaycastHit> hits = new List<ARRaycastHit>();
-
-    [Header("State")]
-    public bool isPlacing = true;
+    private List<ARRaycastHit> hits = new();
     private GameObject selectedObject;
+
     private Vector2 prevTouchPos1, prevTouchPos2;
 
     void Awake()
     {
         raycastManager = GetComponent<ARRaycastManager>();
+        if (arCamera == null)
+            arCamera = Camera.main;
     }
 
     void Update()
     {
-        if (Input.touchCount == 0) return;
+        // 선택된 오브젝트 조작만 처리
+        if (Input.touchCount > 0 && selectedObject != null)
+            HandleManipulation();
+    }
 
-        Touch touch = Input.GetTouch(0);
-
-        // 1) 오브젝트 선택 체크
-        if (touch.phase == TouchPhase.Began)
+    // ✅ 스크롤뷰 버튼에서 호출할 함수
+    public void PlaceObject(GameObject prefab)
+    {
+        if (prefab == null)
         {
-            Ray ray = arCamera.ScreenPointToRay(touch.position);
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                if (hit.collider != null && hit.collider.gameObject.CompareTag("Furniture"))
-                {
-                    SelectObject(hit.collider.gameObject);
-                    return; // ✅ 선택됐으면 Placement 중단
-                }
-            }
-        }
-
-        // 2) 선택된 오브젝트가 있으면 Manipulation 실행
-        if (selectedObject != null)
-        {
-            HandleSelectionAndManipulation(); // ✅ 함수 이름 맞춤
+            Debug.LogWarning("No prefab assigned!");
             return;
         }
 
-        // 3) 아무것도 선택 안 된 상태에서 Plane 터치 → Placement
-        if (touch.phase == TouchPhase.Began)
+        Pose placePose;
+        bool foundPlane = false;
+
+        // 화면 중앙 기준으로 평면 탐색
+        Vector2 screenCenter = new Vector2(Screen.width / 2f, Screen.height / 2f);
+
+        if (raycastManager != null && raycastManager.Raycast(screenCenter, hits, TrackableType.PlaneWithinPolygon))
         {
-            if (raycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
-            {
-                Pose hitPose = hits[0].pose;
-                GameObject newObj = Instantiate(defaultPrefab, hitPose.position, hitPose.rotation); // ✅ defaultPrefab 사용
-                newObj.tag = "Furniture"; // ✅ 태그 필수
-                SelectObject(newObj);     // 생성 즉시 선택
-            }
+            placePose = hits[0].pose;
+            foundPlane = true;
         }
+        else
+        {
+            // 평면 없으면 카메라 앞 1m에 임시 배치
+            placePose = new Pose(
+                arCamera.transform.position + arCamera.transform.forward * 1.0f,
+                Quaternion.LookRotation(arCamera.transform.forward)
+            );
+            foundPlane = false;
+        }
+
+        GameObject newObj = Instantiate(prefab, placePose.position, placePose.rotation);
+        newObj.tag = "Furniture";
+
+        if (newObj.GetComponent<Collider>() == null)
+            newObj.AddComponent<BoxCollider>();
+        if (newObj.GetComponent<Selectable>() == null)
+            newObj.AddComponent<Selectable>();
+
+        SelectObject(newObj);
+
+        if (foundPlane)
+            Debug.Log($"[AR] {prefab.name} placed on plane at {placePose.position}");
+        else
+            Debug.LogWarning($"[AR] No plane found — placed {prefab.name} in front of camera");
     }
 
-    // -----------------------------
-    // 오브젝트 선택 + 조작
-    // -----------------------------
-    void HandleSelectionAndManipulation()
+    private void HandleManipulation()
     {
         if (Input.touchCount == 1)
         {
-            Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Moved && selectedObject != null)
+            Touch t = Input.GetTouch(0);
+            if (t.phase == TouchPhase.Moved &&
+                raycastManager.Raycast(t.position, hits, TrackableType.PlaneWithinPolygon))
             {
-                // 선택된 오브젝트 이동
-                if (raycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
-                {
-                    Pose hitPose = hits[0].pose;
-                    selectedObject.transform.position = hitPose.position;
-                }
+                selectedObject.transform.position = hits[0].pose.position;
             }
         }
-        else if (Input.touchCount == 2 && selectedObject != null)
+        else if (Input.touchCount == 2)
         {
             Touch t0 = Input.GetTouch(0);
             Touch t1 = Input.GetTouch(1);
@@ -96,54 +99,37 @@ public class ObjectPlacementAndManipulation : MonoBehaviour
                 return;
             }
 
-            if (t0.phase == TouchPhase.Moved || t1.phase == TouchPhase.Moved)
-            {
-                // Scale
-                float prevDist = (prevTouchPos1 - prevTouchPos2).magnitude;
-                float currDist = (t0.position - t1.position).magnitude;
-                if (!Mathf.Approximately(prevDist, 0))
-                {
-                    float scaleFactor = currDist / prevDist;
-                    selectedObject.transform.localScale *= scaleFactor;
-                }
+            float prevDist = (prevTouchPos1 - prevTouchPos2).magnitude;
+            float currDist = (t0.position - t1.position).magnitude;
+            float scaleFactor = currDist / prevDist;
+            selectedObject.transform.localScale *= scaleFactor;
 
-                // Rotate
-                float prevAngle = Mathf.Atan2(prevTouchPos1.y - prevTouchPos2.y, prevTouchPos1.x - prevTouchPos2.x) * Mathf.Rad2Deg;
-                float currAngle = Mathf.Atan2(t0.position.y - t1.position.y, t0.position.x - t1.position.x) * Mathf.Rad2Deg;
-                float angleDelta = currAngle - prevAngle;
-                selectedObject.transform.Rotate(Vector3.up, angleDelta);
+            float prevAngle = Mathf.Atan2(prevTouchPos1.y - prevTouchPos2.y, prevTouchPos1.x - prevTouchPos2.x) * Mathf.Rad2Deg;
+            float currAngle = Mathf.Atan2(t0.position.y - t1.position.y, t0.position.x - t1.position.x) * Mathf.Rad2Deg;
+            selectedObject.transform.Rotate(Vector3.up, currAngle - prevAngle);
 
-                prevTouchPos1 = t0.position;
-                prevTouchPos2 = t1.position;
-            }
+            prevTouchPos1 = t0.position;
+            prevTouchPos2 = t1.position;
         }
     }
 
-    // -----------------------------
-    // 선택 처리
-    // -----------------------------
-    void SelectObject(GameObject obj)
+    private void SelectObject(GameObject obj)
     {
+        // 기존 선택 해제
         if (selectedObject != null && selectedObject != obj)
-            SetOutline(selectedObject, false);
+        {
+            var prevSel = selectedObject.GetComponent<Selectable>();
+            if (prevSel != null)
+                prevSel.SetHighlight(false);
+        }
 
         selectedObject = obj;
-        SetOutline(selectedObject, true);
-    }
 
-    void SetOutline(GameObject obj, bool enable)
-    {
-        var outline = obj.GetComponent<Outline>();
-        if (outline != null) outline.enabled = enable;
-    }
+        // Outline 표시
+        var selectable = obj.GetComponent<Selectable>();
+        if (selectable != null)
+            selectable.SetHighlight(true);
 
-    public void EnablePlacementMode()
-    {
-        isPlacing = true;
-        if (selectedObject != null)
-        {
-            SetOutline(selectedObject, false);
-            selectedObject = null;
-        }
+        colorApplicator?.SetTarget(selectedObject);
     }
 }
