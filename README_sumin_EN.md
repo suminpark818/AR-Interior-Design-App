@@ -41,3 +41,41 @@
 ### Result
 - Objects can now be placed, selected, moved, scaled, and rotated intuitively.
 - Verified smooth gesture response and accurate placement on iPhone build.
+
+---
+
+## Week 3 Progress: Furniture Selection & Placement Integration
+
+### What I Did
+
+- Refactored **furniture placement system**:
+  -  Moved all placement logic to **`ObjectPlacementAndManipulation`**
+  -  Implemented **ScrollView button-based placement** — object spawns only when selected from UI, not by tapping screen
+  -  Ensured **plane detection** via `ARRaycastManager` for grounded placement
+- Updated **Selectable.cs** and **ObjectSelector.cs**:
+  -Rebuilt **highlight toggle system** with `SetHighlight()` / `ToggleHighlight()` methods
+  - Integrated **QuickOutline** for visual feedback on selection
+  - Fixed missing method references (`SetHighlight`, `ToggleHighlight`) and script link issues
+- Connected **FurnitureSelectionManager → ObjectPlacementAndManipulation** reference
+  - Added null check & auto-link fallback
+  - Resolved `[FurnitureSelectionManager] placementSystem이 연결되지 않았습니다!` error
+
+### Troubleshooting Summary
+
+- **Problem:** Furniture spawned randomly on drag
+  → Fixed by removing touch-based placement; placement now triggered only via ScrollView button.
+- **Problem:** Missing highlight references (`SetHighlight`, `ToggleHighlight`)
+  → Reimplemented methods in `Selectable.cs`.
+- **Problem:** placementSystem not linked
+  → Added runtime fallback `FindObjectOfType<ObjectPlacementAndManipulation>()`.
+- **Problem:** Lost local edits after stash
+  → Restored using `git stash list` + `git stash pop stash@{0}`.
+
+### Result
+
+- Furniture placement now works **only through ScrollView UI** — no unintended spawning.
+- Selected objects can be **moved, rotated, scaled, and highlighted correctly**.
+- All scripts compile and link without error.
+- Verified clean operation on iPhone build with proper plane alignment and stable selection system.
+
+---
