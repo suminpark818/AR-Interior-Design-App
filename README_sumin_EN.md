@@ -2,7 +2,7 @@
 
 ## Week 1 Progress
 
-### What I Did
+### What  I Did
 - Created new AR scene
 - Configured **AR Foundation + ARKit XR Plugin**
 - Set up **AR Session Origin**, **AR Plane Manager**, and **AR Camera**
@@ -79,3 +79,34 @@
 - Verified clean operation on iPhone build with proper plane alignment and stable selection system.
 
 ---
+## Week 4 Progress – Stabilizing Object Placement & Interaction System
+
+### What I Did
+Refactored ObjectPlacer to unify with ObjectPlacementAndManipulation structure
+Added UI touch filtering (IsTouchOverUI) to prevent unintended placement when touching UI panels
+Integrated selection / deselection system
+Tap on furniture → highlight via QuickOutline
+Tap empty space → deselect and disable outline
+Added placement-state logic to prevent repeated movement after placement
+Implemented safe null-checks and debug logs for placement flow
+Guarded FurnitureSelectionManager.CurrentFurniturePrefab against null to avoid ArgumentException
+Added [AR] prefixed debug messages for runtime tracking
+Adjusted anchor attachment: automatic fallback to ARAnchor if AttachAnchor() fails
+Updated deprecated API calls (FindObjectOfType → FindFirstObjectByType) for Unity 6000.1+
+
+### Troubleshooting Summary
+Issue: Continuous selection without release → object stayed highlighted
+→ Added DeselectObject() method + empty-space tap detection
+Issue: IsTouchOverUI missing symbol error
+→ Implemented dedicated helper function with PointerEventData filter
+Issue: Prefab null reference on instantiate
+→ Verified FurnitureSelectionManager UI binding + added null-protection
+Issue: Model not standing upright after spawn
+→ Checked prefab pivot/orientation; adjusted rotation handling in hit pose
+Warnings: Deprecated FindObjectOfType usage
+→ Replaced with FindFirstObjectByType for future compatibility
+Result
+Furniture placement and selection now operate consistently through UI interaction only
+Objects can be placed once, highlighted, and locked in position after confirmation
+No more unintended spawning or persistent highlights
+Verified stable build on iPhone (ARKit 6.2.0 / Unity 6000.1.17f1)
