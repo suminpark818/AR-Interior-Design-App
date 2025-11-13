@@ -141,6 +141,9 @@
 - FindObjectOfType → FindFirstObjectByType 변경으로 API 경고 제거
 ✅ 오브젝트가 한 번만 생성되고, UI 기반 상호작용만으로 안정적으로 제어 가능
 ✅ iPhone (ARKit 6.2.0 / Unity 6000.1.17f1)에서 정상 작동 확인
-<img width="632" height="1389" alt="IMG_1511" src="https://github.com/user-attachments/assets/7b657792-ea17-4c68-b864-e4d5ad73d1e7" />
-<img width="632" height="1389" alt="IMG_1514" src="https://github.com/user-attachments/assets/5987b109-d93c-4d64-ae09-c49390137d32" />
+<p align="center">
+  <img width="642" height="1389" alt="IMG_1511" src="https://github.com/user-attachments/assets/4ef1c1f3-c4db-4bc8-9e9b-c4dcd0adb179" />
+  <img width="642" height="1389" alt="IMG_1514" src="https://github.com/user-attachments/assets/ed490d7c-6663-4b13-91d4-48ddaaa7ec8c" />
+</p>
+
 
