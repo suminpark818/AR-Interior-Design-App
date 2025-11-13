@@ -83,14 +83,14 @@
 
 ### What I Did
 - Refactored ObjectPlacer to unify with ObjectPlacementAndManipulation structure
- - Added UI touch filtering (IsTouchOverUI) to prevent unintended placement when touching UI panels
- - Integrated selection / deselection system
-  - Tap on furniture → highlight via QuickOutline
-  - Tap empty space → deselect and disable outline
- - Added placement-state logic to prevent repeated movement after placement
+  - Added UI touch filtering (IsTouchOverUI) to prevent unintended placement when touching UI panels
+  - Integrated selection / deselection system
+    - Tap on furniture → highlight via QuickOutline
+    - Tap empty space → deselect and disable outline
+  - Added placement-state logic to prevent repeated movement after placement
 - Implemented safe null-checks and debug logs for placement flow
- - Guarded FurnitureSelectionManager.CurrentFurniturePrefab against null to avoid ArgumentException
- - Added [AR] prefixed debug messages for runtime tracking
+  - Guarded FurnitureSelectionManager.CurrentFurniturePrefab against null to avoid ArgumentException
+  - Added [AR] prefixed debug messages for runtime tracking
 - Adjusted anchor attachment: automatic fallback to ARAnchor if AttachAnchor() fails
 - Updated deprecated API calls (FindObjectOfType → FindFirstObjectByType) for Unity 6000.1+
 
