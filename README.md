@@ -110,3 +110,37 @@
 - Objects can be placed once, highlighted, and locked in position after confirmation
 - No more unintended spawning or persistent highlights
 - Verified stable build on iPhone (ARKit 6.2.0 / Unity 6000.1.17f1)
+
+# 주차별 진행 요약 
+## 1주차
+- 새로운 AR 씬 생성 및 AR Foundation + ARKit XR Plugin 설정
+- PlaneVisualizer를 활용해 평면 시각화 기능 구현
+- 터치 기반 오브젝트 배치(Anchor 테스트) 완료
+- 입력 감지 문제 해결 (Active Input Handling → Both)
+✅ 아이폰에서 큐브 정상 배치 확인
+
+## 2주차
+- 오브젝트 조작 시스템 완성 (이동, 회전, 확대/축소)
+- 오브젝트 선택 시 QuickOutline 하이라이트 적용
+- 터치 이동 중 중복 배치 문제 해결 (isPlacing 플래그 추가)
+- ARRaycast 기반 터치 감지 개선
+✅ 자연스러운 제스처 조작과 정확한 배치 확인
+
+## 3주차
+- UI 기반 가구 배치 시스템 완성
+  → 화면 터치로는 배치 불가, ScrollView 버튼 클릭 시만 배치
+- Selectable / ObjectSelector 개선으로 하이라이트 토글 복원
+- FurnitureSelectionManager 자동 연결 로직 추가 (null 체크 및 FindObjectOfType 대체)
+✅ iPhone 빌드에서 올바른 평면 정렬 및 안정적인 선택 시스템 검증
+
+## 4주차
+- ObjectPlacer 및 ObjectPlacementAndManipulation 구조 통합
+- UI 터치 필터링 추가(IsTouchOverUI) → UI 패널 터치 시 오브젝트 배치 차단
+- 선택 / 선택 해제 시스템 구현 (빈 공간 터치 시 선택 해제)
+- Anchor 자동 부착 + 실패 시 폴백 처리
+- FindObjectOfType → FindFirstObjectByType 변경으로 API 경고 제거
+✅ 오브젝트가 한 번만 생성되고, UI 기반 상호작용만으로 안정적으로 제어 가능
+✅ iPhone (ARKit 6.2.0 / Unity 6000.1.17f1)에서 정상 작동 확인
+<img width="1284" height="2778" alt="IMG_1511" src="https://github.com/user-attachments/assets/7b657792-ea17-4c68-b864-e4d5ad73d1e7" />
+<img width="1284" height="2778" alt="IMG_1514" src="https://github.com/user-attachments/assets/5987b109-d93c-4d64-ae09-c49390137d32" />
+
